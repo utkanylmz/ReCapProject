@@ -1,4 +1,5 @@
-﻿using Core.Utilities.Result;
+﻿using Core.Entities.Concrete;
+using Core.Utilities.Result;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -8,13 +9,13 @@ using System.Threading.Tasks;
 
 namespace Business.Abstract
 {
-    public interface IUserServices
-    {
-        IDataResult<List<User>> GetAll();
-        IDataResult<User> GetById(int id);
 
-        IResult AddUser(User user);
-        IResult UpdateUser(User user);
-        IResult DeleteUser(User user);
-    }
+    public interface IUserService
+    {
+        List<OperationClaim> GetClaims(User user);
+        void Add(User user);
+        User GetByMail(string email);
+
+    }//Claimleri getir kullancı ekle ve mail adresine göre kullanıcı getir
+
 }

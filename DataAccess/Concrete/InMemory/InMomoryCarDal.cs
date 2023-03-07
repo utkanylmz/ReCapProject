@@ -25,38 +25,22 @@ namespace DataAccess.Concrete.InMemory
             };
         }
 
-        public void Add(Car car)
+        public void Add(Car entity)
         {
-            _car.Add(car);
+            throw new NotImplementedException();
         }
 
-        public void Delete(Car car)
+        public void Delete(Car entity)
         {
-            Car carToDelete = _car.SingleOrDefault(c => c.Id == car.Id);
-            _car.Remove(carToDelete);
+            throw new NotImplementedException();
         }
 
-        public List<Car> GetAll()
+        public Car Get(Expression<Func<Car, bool>> filter)
         {
-            return _car;
+            throw new NotImplementedException();
         }
 
         public List<Car> GetAll(Expression<Func<Car, bool>> filter = null)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<Car> GetAllById(int id)
-        {
-            return _car.Where(c => c.Id == id).ToList();
-        }
-
-        public List<Car> GetAllById(Expression<Func<Car, bool>> filter)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Car GetById(Expression<Func<Car, bool>> filter)
         {
             throw new NotImplementedException();
         }
@@ -66,16 +50,9 @@ namespace DataAccess.Concrete.InMemory
             throw new NotImplementedException();
         }
 
-        public void Update(Car car)
+        public void Update(Car entity)
         {
-            Car carToUpdate = _car.SingleOrDefault(c => c.Id == car.Id);
-            carToUpdate.BrandId = car.BrandId;
-            carToUpdate.ColorId = car.ColorId;
-            carToUpdate.ModelYear = car.ModelYear;
-            carToUpdate.DailyPrice = car.DailyPrice;
-            carToUpdate.Description = car.Description;
+            throw new NotImplementedException();
         }
-
-       
     }
 }
